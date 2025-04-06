@@ -253,7 +253,7 @@ function spellInfo(spellName) {
     }
 
         if (foundSpell) {
-        console.log(`Spell Found: ${foundSpell.spellName}`);
+        console.log(`Spell: ${foundSpell.spellName}`);
         console.log(`Description: ${foundSpell.description}`);
         console.log(`To Cast: ${foundSpell.toCast}`);
         console.log(`Cast Time: ${foundSpell.castTime}sec`);
