@@ -224,8 +224,11 @@ let spellBook = {
     ]
 };
 
+// Factory Function to create a new spell tome
+//const createSpellTome = () => {}
+
 // Function to display all spell tomes
-function displayTomes() {
+const displayTomes = () => {
     console.log('Available Spell Tomes:');
     Object.keys(spellBook).forEach(tome => {
         console.log(`- ${tome}`);
@@ -233,7 +236,7 @@ function displayTomes() {
 }
 
 // Function to display all spells in a selected tome
-function inspectTome(tomeName) {
+const inspectTome = tomeName => {
     if (spellBook[tomeName]) {
         console.log(`Spells in ${tomeName}:`);
         spellBook[tomeName].forEach(spell => {
@@ -244,7 +247,7 @@ function inspectTome(tomeName) {
     }
 }
 
-function spellInfo(spellName) {
+const spellInfo = spellName => {
         let foundSpell = null;
         
         for(let tome in spellBook) {
@@ -264,7 +267,7 @@ function spellInfo(spellName) {
         }
 }
 
-function castSpell(spellName) {
+const castSpell = spellName => {
     let foundSpell = null;
         
         for(let tome in spellBook) {
@@ -273,9 +276,36 @@ function castSpell(spellName) {
     }
 
         if (foundSpell) {
-        console.log(`You cast ${foundSpell.spellName.toUpperCase()}!`);
+        console.log(`You cast ${foundSpell.spellName}!`.toUpperCase());
         } else {
         console.log(`${spellName} is not a castable spell. 
             Please try casting something from the actual spellbook.`);
         }
+}
+
+let armory = {
+    //Armor, Clothing, and Trinkets Category
+    armorAndTrinkets: [
+        {
+            itemName: 'Grounding Band',
+            description: `Tarnished iron band worn around 
+            the forearm that absorbs dark energy from 
+            users spells, acts like a geiger counter 
+            for dark magic`
+        }
+    ],
+    //Weapon Category
+    armoryWeapons: [
+        {
+            weaponName: 'Elksedge',
+            description: 'to be added'
+        }
+    ],
+    //Tools and Misc Category 
+    armoryTools: [
+        {
+            toolName: `Witch\'s Prothsetic`,
+            description: `to be added`,
+        }
+    ]
 }
